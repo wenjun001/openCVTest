@@ -16,6 +16,8 @@ else(OpenCV_FOUND)
 endif(OpenCV_FOUND)
 
 
+include(/home/wma/project/openCVTest/app/src/main/dlib/cmake)
+
 
 add_library( # Sets the name of the library.
              native-lib
@@ -36,6 +38,7 @@ find_library(
 
 target_link_libraries( # Specifies the target library.
                        native-lib
+                       dlib::dlib
                        -ljnigraphics
                        ${OpenCV_LIBS}
                        ${log-lib} )
